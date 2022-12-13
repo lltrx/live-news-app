@@ -1,6 +1,8 @@
-import React from 'react'
+import { categories } from "../constants"
 
-function page() {
+async function page() {
+
+  const news: NewsResponse = await fetchNews(categories.join(','))
   return (
     <div>
       

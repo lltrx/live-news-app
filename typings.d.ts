@@ -1,14 +1,14 @@
-type DataEntry ={
+type Article ={
      author: string | null;
-     title: string;
-     description: string;
-     url: string;
-     source: string;
-     image: string | null ;
      category: Category;
-     language: string;
      country: string;
+     description: string;
+     image: string | null ;
+     language: string;
      published_at: string;
+     source: string;
+     title: string;
+     url: string;
 }
 
 type Pagination = {
@@ -21,14 +21,14 @@ type Pagination = {
 
 type NewsResponse = {
      pagination: Pagination;
-     data: DataEntry[];
+     data: Article[];
 }
 
 
 type Category =
-     | "general"
      | "business"
      | "entertainment"
+     | "general"
      | "health"
      | "science"
      | "sports"

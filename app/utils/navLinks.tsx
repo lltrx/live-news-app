@@ -10,6 +10,7 @@ function navLinks() {
   const isActive = (path: string) => {
     return pathname?.split("/").pop() === path;
   };
+  
   return (
     <nav
       className="grid grid-cols-4 md:grid-cols-7 text-xs md:text-sm

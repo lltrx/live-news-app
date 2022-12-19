@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import NavLink from "./navLink";
 
 function navLinks() {
-  const { pathname } = usePathname();
+  const pathname = usePathname();
 
   const isActive = (path: string) => {
     return pathname?.split("/").pop() === path;

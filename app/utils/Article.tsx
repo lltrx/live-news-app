@@ -31,7 +31,7 @@ function Article({ article }: Props) {
             <p>{article.source}</p>
             <p>
               <LiveTimesStamp time={article.published_at} />
-              </p>
+            </p>
           </footer>
         </div>
 

@@ -16,18 +16,16 @@ function readMoreButton({ article }: Props) {
     const url = `/article?${queryString}`;
     console.log(url);
     router.push(url);
-
-  }
-  
-    return (
-      <button
-        onClick={handleClick}
-        className="bg-orange-400 h-10 rounded-b-lg dark:text-gray-900 hover:bg-orange-500"
-      >
-        Read more
-      </button>
-    );
   };
 
+  return (
+    <button
+      onClick={handleClick}
+      className="bg-orange-400 h-10 rounded-b-lg dark:text-gray-900 hover:bg-orange-500"
+    >
+      Read more
+    </button>
+  );
+}
 
 export default readMoreButton;

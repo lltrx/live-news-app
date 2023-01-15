@@ -1,47 +1,48 @@
-import {notFound} from "next/navigation";
+import { notFound } from "next/navigation";
 
 type Props = {
-     searchParams?: Article
-}
+  searchParams?: Article;
+};
 
 // if there is no image in the article, we want to display the title and description
 // in the center of the page
 
-function ArticlePage({searchParams}: Props) {
-     if (
-          (searchParams && Object.keys(searchParams).length === 0) ||
-          !searchParams
-     ) {
-          return notFound();
-     }
+function ArticlePage({ searchParams }: Props) {
+  if (
+    (searchParams && Object.keys(searchParams).length === 0) ||
+    !searchParams
+  ) {
+    return notFound();
+  }
 
-     const article: Article = searchParams;
+  const article: Article = searchParams;
 
-          return <article>
-          <section className="flex flex-col lg:flex-row pb-24 px-0 lg:px-10">
-               {article.image && (
-                    <img
-               className="h-50 max-w-md mx-auto md:max-w-lg lg:max-w-xl
+  return (
+    <article>
+      <section className="flex flex-col lg:flex-row pb-24 px-0 lg:px-10">
+        {article.image && (
+          <img
+            className="h-50 max-w-md mx-auto md:max-w-lg lg:max-w-xl
                object-cover rounded-t-lg shadow-md"
-               src={article.image}
-               alt={article.title}
-               />
-               )}
+            src={article.image}
+            alt={article.title}
+          />
+        )}
 
-               <div className="px-10">
-                    <h1 className="headerTitle px-0 no-underline pb-2">
-                         {article.title}
-                    </h1>
-                    <div className="flex divide-x-2 space-x-4">
-                         <h2 className="font-bold">By: {article.author || "unknown"}</h2>
-                         <h2 className="font-bold pl-4">Source: {article.source}</h2>
-                         <p className="pl-4">{article.published_at}</p>
-                    </div>
-                    <p className="pt-4">{article.description}</p>
-               </div>
-          </section>
-     </article>
+        <div className="px-10">
+          <h1 className="headerTitle px-0 no-underline pb-2">
+            {article.title}
+          </h1>
+          <div className="flex divide-x-2 space-x-4">
+            <h2 className="font-bold">By: {article.author || "unknown"}</h2>
+            <h2 className="font-bold pl-4">Source: {article.source}</h2>
+            <p className="pl-4">{article.published_at}</p>
+          </div>
+          <p className="pt-4">{article.description}</p>
+        </div>
+      </section>
+    </article>
+  );
 }
 
-
-export default ArticlePage
+export default ArticlePage;
